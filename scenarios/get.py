@@ -14,4 +14,4 @@ sys.path.append('B:/Code/api_testing_v1')
 # delete_req(route.DELETE_END_POINT)
 # get_req(route.END_POINT)
 
-from tests.get_test_cases import test_case1, test_case2, test_case3
+from tests.get_test_cases import *
