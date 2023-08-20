@@ -1,26 +1,34 @@
 class case_model:
-    def __init__(self):
+    def append(
+        self,
+        run_id,
+        status,
+        module,
+        name,
+        description,
+        api_route,
+        http_code,
+        started_at,
+        ended_at,
+    ):
         self.array = []
-        self.module_id = 0
-        self.name = ""
-        self.status = ""
-        self.http_code = 0
-        self.started_at = ""
-        self.ended_at = ""
-        self.duration = ""
-
-    def append(self, module_id, name, status, http_code, started_at, ended_at):
-        self.module_id = module_id
-        self.name = name
+        self.run_id = run_id
         self.status = status
+        self.module = module
+        self.name = name
+        self.description = description
+        self.api_route = api_route
         self.http_code = http_code
         self.started_at = started_at
         self.ended_at = ended_at
         self.duration = ended_at - started_at
         csv = (
-            self.module_id,
-            self.name,
+            self.run_id,
             self.status,
+            self.module,
+            self.name,
+            self.description,
+            self.api_route,
             self.http_code,
             str(self.started_at),
             str(self.ended_at),

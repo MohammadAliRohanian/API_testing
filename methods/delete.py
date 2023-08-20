@@ -1,3 +1,4 @@
+### Delete method ###
 import requests
 
 
