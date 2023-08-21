@@ -1,4 +1,4 @@
-### Put method ###
+# Put method
 import requests
 
 

@@ -6,7 +6,7 @@ user = config.DB_USER
 password = config.DB_PASS
 database = config.DB_NAME
 
-### Insert to db
+# Insert to db
 def save_case(case_model):
     connection = pymysql.connect(
         host=host, user=user, passwd=password, database=database
@@ -21,12 +21,12 @@ def save_case(case_model):
     connection.commit()
     connection.close()
 
-    ### Print cases that in executing ###
+    # Print cases that in executing
     print("       Case Executed.")
 
     return cursor.lastrowid
 
-### Select the last 10 rows ###
+# Select the last 10 rows
 def get_case():
     connection = pymysql.connect(
         host=host, user=user, passwd=password, database=database

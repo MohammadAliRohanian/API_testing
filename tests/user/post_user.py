@@ -1,4 +1,4 @@
-### Post user test case ###
+# Post user test case
 import sys
 
 sys.path.append("B:/Code/crystal")
@@ -23,7 +23,7 @@ def test_case_1(run_id):
     module = __name__
     name = inspect.stack()[0][3]
     
-    ### Call the method ###
+    # Call the method
     body = {
         "name": "MohammadAli",
         "family": "Rohanian",
@@ -33,12 +33,12 @@ def test_case_1(run_id):
     res = post_req(api_route, body)
     ended_at = datetime.now()
 
-    ### Assertion statement ###
+    # Assertion statement
     if res.status_code != 201:
         result = "Fail"
     result = "Pass"
 
-    ### Save case ###
+    # Save case
     case = case_model()
     case.append(
         run_id,
@@ -61,19 +61,19 @@ def test_case_2(run_id):
     module_name = __name__
     case_name = inspect.stack()[0][3]
 
-    ### Call the method ###
+    # Call the method
     body = {}
 
     started_at = datetime.now()
     res = post_req(api_route + "2", body)
     ended_at = datetime.now()
 
-    ### Assertion statement ###
+    # Assertion statement
     if res.status_code != 201:
         result = "Fail"
     result = "Pass"
 
-    ### Save case ###
+    # Save case
     case = case_model()
     case.append(
         run_id,
@@ -96,7 +96,7 @@ def test_case_3(run_id):
     module_name = __name__
     case_name = inspect.stack()[0][3]
 
-    ### Assertion statement ###
+    # Assertion statement
     body = {}
 
     started_at = datetime.now()
@@ -107,7 +107,7 @@ def test_case_3(run_id):
         result = "Fail"
     result = "Pass"
 
-    ### Save case ###
+    # Save case
     case = case_model()
     case.append(
         run_id,

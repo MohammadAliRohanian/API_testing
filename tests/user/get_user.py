@@ -1,4 +1,4 @@
-### Get user test case ###
+# Get user test case
 import sys
 
 sys.path.append("B:/Code/crystal")
@@ -22,20 +22,20 @@ def test_case_1(run_id):
     module = __name__
     name = inspect.stack()[0][3]
 
-    ### Call the method ###
+    # Call the method
     started_at = datetime.now()
     res = get_req(api_route)
     ended_at = datetime.now()
 
     # print(res.status_code)
 
-    ### Assertion statement ###
+    # Assertion statement
     if res.status_code == 200:
         result = "Pass"
     else:
         result = "Fail"
 
-    ### Save case ###
+    # Save case
     case = case_model()
     case.append(
         run_id,

@@ -1,4 +1,4 @@
-### Get method ###
+# Get method
 import requests
 
 

@@ -6,7 +6,7 @@ user = config.DB_USER
 password = config.DB_PASS
 database = config.DB_NAME
 
-### Insert to db and save started_at ###
+# Insert to db and save started_at
 def init_run(started_at):
     connection = pymysql.connect(
         host=host, user=user, passwd=password, database=database
@@ -21,12 +21,12 @@ def init_run(started_at):
     connection.commit()
     connection.close()
 
-    ### Print stared run ###
+    # Print stared run
     print("------ Run Started at " + str(started_at) + " ------")
 
     return cursor.lastrowid
 
-### Upadte runs ###
+# Upadte runs
 def finalize_run(run_model):
     connection = pymysql.connect(
         host=host, user=user, passwd=password, database=database
@@ -42,7 +42,7 @@ def finalize_run(run_model):
     connection.commit()
     connection.close()
 
-    ### print ended_at & duration ###
+    # print ended_at & duration
     print(
         "------ Run Ended at "
         + str(val[0][1])
@@ -53,7 +53,7 @@ def finalize_run(run_model):
 
     return cursor.lastrowid
 
-### Select the last 10 rows ###
+# Select the last 10 rows
 def get_run():
     connection = pymysql.connect(
         host=host, user=user, passwd=password, database=database
