@@ -2,20 +2,22 @@ import pymysql
 import config
 
 host = config.DB_HOST
+port = config.DB_PORT
 user = config.DB_USER
 password = config.DB_PASS
 database = config.DB_NAME
 
+
 # Insert to db and save started_at
-def init_run(started_at):
+def init_run(name, started_at, description):
     connection = pymysql.connect(
-        host=host, user=user, passwd=password, database=database
+        host=host, port=port, user=user, passwd=password, database=database
     )
     cursor = connection.cursor()
 
-    query = "insert into runs (started_at) values(%s)"
+    query = "insert into runs (name, started_at, description) values(%s, %s, %s)"
 
-    val = started_at
+    val = (name, started_at, description)
 
     cursor.execute(query, val)
     connection.commit()
@@ -26,10 +28,11 @@ def init_run(started_at):
 
     return cursor.lastrowid
 
+
 # Upadte runs
 def finalize_run(run_model):
     connection = pymysql.connect(
-        host=host, user=user, passwd=password, database=database
+        host=host, port=port, user=user, passwd=password, database=database
     )
     cursor = connection.cursor()
 
@@ -52,6 +55,7 @@ def finalize_run(run_model):
     )
 
     return cursor.lastrowid
+
 
 # Select the last 10 rows
 def get_run():

@@ -18,11 +18,11 @@ from database.repositories.case_db import *
 api_route = route.USERS_ROUTE
 
 
-def test_case_1(run_id):
+def post_user_1_happy(run_id):
     description = "post method with name & family"
     module = __name__
     name = inspect.stack()[0][3]
-    
+
     # Call the method
     body = {
         "name": "MohammadAli",
@@ -35,14 +35,14 @@ def test_case_1(run_id):
 
     # Assertion statement
     if res.status_code != 201:
-        result = "Fail"
-    result = "Pass"
+        status = "Fail"
+    status = "Pass"
 
     # Save case
     case = case_model()
     case.append(
         run_id,
-        result,
+        status,
         module,
         name,
         description,
@@ -53,13 +53,15 @@ def test_case_1(run_id):
     )
     save_case(case)
 
-    return result
+    res_object = res.json()
+
+    return {"status": status, "result": res_object}
 
 
-def test_case_2(run_id):
-    case_description = "post to incorrent route"
-    module_name = __name__
-    case_name = inspect.stack()[0][3]
+def post_user_2_sad(run_id):
+    description = "post to incorrent route"
+    module = __name__
+    name = inspect.stack()[0][3]
 
     # Call the method
     body = {}
@@ -70,31 +72,33 @@ def test_case_2(run_id):
 
     # Assertion statement
     if res.status_code != 201:
-        result = "Fail"
-    result = "Pass"
+        status = "Fail"
+    status = "Pass"
 
     # Save case
     case = case_model()
     case.append(
         run_id,
-        module_name,
-        case_name,
-        case_description,
+        status,
+        module,
+        name,
+        description,
         api_route,
-        result,
         res.status_code,
         started_at,
         ended_at,
     )
     save_case(case)
 
-    return result
+    res_object = res.json()
+
+    return {"status": status, "result": res_object}
 
 
-def test_case_3(run_id):
-    case_description = "post method with empty body"
-    module_name = __name__
-    case_name = inspect.stack()[0][3]
+def post_user_3_sad(run_id):
+    description = "post method with empty body"
+    module = __name__
+    name = inspect.stack()[0][3]
 
     # Assertion statement
     body = {}
@@ -104,22 +108,24 @@ def test_case_3(run_id):
     ended_at = datetime.now()
 
     if res.status_code == 201:
-        result = "Fail"
-    result = "Pass"
+        status = "Fail"
+    status = "Pass"
 
     # Save case
     case = case_model()
     case.append(
         run_id,
-        module_name,
-        case_name,
-        case_description,
+        status,
+        module,
+        name,
+        description,
         api_route,
-        result,
         res.status_code,
         started_at,
         ended_at,
     )
     save_case(case)
 
-    return result
+    res_object = res.json()
+
+    return {"status": status, "result": res_object}

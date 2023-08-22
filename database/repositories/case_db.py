@@ -2,14 +2,16 @@ import pymysql
 import config
 
 host = config.DB_HOST
+port = config.DB_PORT
 user = config.DB_USER
 password = config.DB_PASS
 database = config.DB_NAME
 
+
 # Insert to db
 def save_case(case_model):
     connection = pymysql.connect(
-        host=host, user=user, passwd=password, database=database
+        host=host, port=port, user=user, passwd=password, database=database
     )
     cursor = connection.cursor()
 
@@ -26,10 +28,11 @@ def save_case(case_model):
 
     return cursor.lastrowid
 
+
 # Select the last 10 rows
 def get_case():
     connection = pymysql.connect(
-        host=host, user=user, passwd=password, database=database
+        host=host, port=port, user=user, passwd=password, database=database
     )
     cursor = connection.cursor()
 

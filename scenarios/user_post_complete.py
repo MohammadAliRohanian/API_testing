@@ -3,24 +3,34 @@ import sys
 
 sys.path.append("B:/Code/crystal")
 
+import os
+
 from datetime import datetime
 from database.models.run_model import *
 from database.repositories.run_db import *
 
 # Import test cases
+from tests.user.post_user import *
 from tests.user.get_user import *
 
 # Start run
+description = "complete user post tests"
 results = []
 run_started_at = datetime.now()
+name = os.path.basename(__file__)
 run = run_model()
-run_id = init_run(run_started_at)
+run_id = init_run(name, run_started_at, description)
 
 # Test cases
-# results.append(happy_1(run_id))
-# results.append(sad_1(run_id))
-# results.append(sad_2(run_id))
-results.append(test_case_1(run_id))
+res = post_user_1_happy(run_id)
+results.append(res["status"])
+
+res = post_user_2_sad(run_id)
+results.append(res["status"])
+
+res = post_user_3_sad(run_id)
+results.append(res["status"])
+
 
 # Check run overall result
 failed_results = filter(lambda x: x == "Fail", results)

@@ -7,6 +7,7 @@ DOMAIN_UAT = "https://64abbfd29edb4181202e72ce.mockapi.io"
 
 # Database configs
 DB_HOST = "localhost"
-DB_USER = "test"
-DB_PASS = "test"
-DB_NAME = "test"
+DB_PORT = 2306
+DB_USER = "QA_1"
+DB_PASS = "QA_1_TesT"
+DB_NAME = "QA_logs"
