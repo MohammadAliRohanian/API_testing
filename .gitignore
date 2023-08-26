@@ -2,6 +2,6 @@
 __pycache__
 *.pyc
 
-# # Ignore IDE and editor files
+# Ignore IDE and editor files
 .vscode/
 .idea/
