@@ -1,4 +1,4 @@
-# User's scenario
+# Create and get the user scenario
 import sys
 
 sys.path.append("B:/Code/crystal")
@@ -10,8 +10,8 @@ from database.models.run_model import *
 from database.repositories.run_db import *
 
 # Import test cases
-from tests.user.post_user import *
-from tests.user.get_user import *
+from cases.user.post_user import *
+from cases.user.get_user import *
 
 # Start run
 description = "create user then get user to see if it exists"

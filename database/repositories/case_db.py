@@ -24,7 +24,7 @@ def save_case(case_model):
     connection.close()
 
     # Print cases that in executing
-    print("       Case Executed.")
+    print("       Case executed.")
 
     return cursor.lastrowid
 

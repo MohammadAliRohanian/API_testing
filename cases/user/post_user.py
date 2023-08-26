@@ -34,9 +34,10 @@ def post_user_1_happy(run_id):
     ended_at = datetime.now()
 
     # Assertion statement
-    if res.status_code != 201:
+    if res.status_code == 201:
+        status = "Pass"
+    else:        
         status = "Fail"
-    status = "Pass"
 
     # Save case
     case = case_model()
@@ -72,8 +73,9 @@ def post_user_2_sad(run_id):
 
     # Assertion statement
     if res.status_code != 201:
+        status = "Pass"
+    else:        
         status = "Fail"
-    status = "Pass"
 
     # Save case
     case = case_model()
@@ -109,7 +111,8 @@ def post_user_3_sad(run_id):
 
     if res.status_code == 201:
         status = "Fail"
-    status = "Pass"
+    else:        
+        status = "Pass"
 
     # Save case
     case = case_model()
