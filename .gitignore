@@ -1,17 +1,7 @@
 # Ignore compiled Python files
 __pycache__
-# *.pyc
-
-# # Ignore local development environment files
-# .env
-# .venv/
-# env/
+*.pyc
 
 # # Ignore IDE and editor files
-# .vscode/
-# .idea/
-
-# # Ignore logs and temporary files
-# logs/
-# temp/
-# *.log
+.vscode/
+.idea/
