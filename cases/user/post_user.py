@@ -19,9 +19,9 @@ api_route = route.USERS_ROUTE
 
 
 def post_user_1_happy(run_id):
-    description = "post method with name & family"
     module = __name__
     name = inspect.stack()[0][3]
+    description = "post method with name & family"
 
     # Call the method
     body = {
@@ -60,9 +60,9 @@ def post_user_1_happy(run_id):
 
 
 def post_user_2_sad(run_id):
-    description = "post to incorrent route"
     module = __name__
     name = inspect.stack()[0][3]
+    description = "post to incorrent route"
 
     # Call the method
     body = {}
@@ -98,9 +98,9 @@ def post_user_2_sad(run_id):
 
 
 def post_user_3_sad(run_id):
-    description = "post method with empty body"
     module = __name__
     name = inspect.stack()[0][3]
+    description = "post method with empty body"
 
     # Assertion statement
     body = {}

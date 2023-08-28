@@ -19,9 +19,9 @@ api_route = route.USERS_ROUTE
 
 
 def get_user_1_happy(run_id):
-    description = "get all users"
     module = __name__
     name = inspect.stack()[0][3]
+    description = "get all users"
 
     # Call the method
     started_at = datetime.now()
@@ -55,9 +55,9 @@ def get_user_1_happy(run_id):
 
 
 def get_user_2_happy(run_id, user_id):
-    description = "get user with user_id"
     module = __name__
     name = inspect.stack()[0][3]
+    description = "get user with id"
 
     # Call the method
     started_at = datetime.now()

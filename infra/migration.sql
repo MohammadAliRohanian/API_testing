@@ -3,7 +3,7 @@ create table runs
     id          int unsigned auto_increment
         primary key,
     name        varchar(512)          not null,
-    description varchar(1024)         null,
+    description varchar(1024)         not null,
     status      enum ('Pass', 'Fail') null,
     started_at  datetime              null,
     ended_at    datetime              null,

@@ -1,4 +1,4 @@
-# User's scenario
+# Full post's test cases.
 import sys
 
 sys.path.append("B:/Code/crystal")
@@ -10,8 +10,8 @@ from database.models.run_model import *
 from database.repositories.run_db import *
 
 # Import test cases
-from tests.user.post_user import *
-from tests.user.get_user import *
+from cases.user.post_user import *
+from cases.user.get_user import *
 
 # Start run
 description = "complete user post tests"
@@ -40,5 +40,5 @@ if len(list(failed_results)) == 0:
 
 # End run
 run_ended_at = datetime.now()
-run.append(run_id, run_result, run_started_at, run_ended_at)
+run.append(run_result, run_started_at, run_ended_at, run_id)
 finalize_run(run)
